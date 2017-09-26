@@ -727,4 +727,5 @@
   ./virtualisation/xe-guest-utilities.nix
   ./virtualisation/openstack/keystone.nix
   ./virtualisation/openstack/glance.nix
+  ./santiment/default.nix
 ]
