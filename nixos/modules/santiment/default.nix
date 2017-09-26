@@ -2,7 +2,7 @@
 with lib;
 let
   cfg = config.santiment.ec2-init;
-  depenv = builtins.readFile config.santiment.deploymentEnvironment;
+  depenv = builtins.readFile config.santiment.deploymentEnvironmentPath;
 in
 {
 
