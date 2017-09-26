@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 with lib;
 let
-  cfg = config.santiment.ec-init;
+  cfg = config.santiment.ec2-init;
   depenv = builtins.readFile config.santiment.deploymentEnvironment;
 in
 {
