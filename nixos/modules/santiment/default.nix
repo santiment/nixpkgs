@@ -15,7 +15,7 @@ in
 
     santiment.deploymentEnvironmentPath = mkOption {
       description = "Path to file containing the branch that needs to be tracked";
-      default = /etc/deployment_environment;
+      default = /etc/nixos/deployment_environment;
       type = types.path;
     };
   };
