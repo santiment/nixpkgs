@@ -23,7 +23,7 @@ in
   config = mkIf cfg.enable {
     ec2.hvm = true;
     nix.nixPath = [
-      "nixpkgs=https://github.com/santiment/nixpkgs/archive/${depenv}.tag.gz"
+      "nixpkgs=https://github.com/santiment/nixpkgs/archive/${depenv}.tar.gz"
       "nixos-config=/etc/nixos/configuration.nix"
     ];
     
