@@ -19388,18 +19388,17 @@ with pkgs;
     macOSSierraShared = callPackage ../test/macos-sierra-shared {};
 
 
+  };
 
 ############################################################
 # Santiment-specific configuration
 ############################################################
 
-    deploymentEnvironment = lib.fileContents ../../deployment_environment;
-    santiment = callPackage ../santiment {};
+  deploymentEnvironment = lib.fileContents ../../deployment_environment;
+  santiment = callPackage ../santiment {};
 
 ############################################################
 # End santiment-specific configuration
 ############################################################
 
-
-  };
 }
