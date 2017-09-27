@@ -1,0 +1,3 @@
+# Don't merge branch specific file
+
+deployment_environment merge=ours
