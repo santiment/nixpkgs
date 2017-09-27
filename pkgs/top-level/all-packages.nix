@@ -19386,5 +19386,20 @@ with pkgs;
     stdenv-inputs = callPackage ../test/stdenv-inputs { };
 
     macOSSierraShared = callPackage ../test/macos-sierra-shared {};
+
+
+
+############################################################
+# Santiment-specific configuration
+############################################################
+
+    deploymentEnvironment = lib.fileContents ../../deployment_environment;
+    santiment = callPackage ../santiment {};
+
+############################################################
+# End santiment-specific configuration
+############################################################
+
+
   };
 }
