@@ -110,6 +110,7 @@ in
       pm.min_spare_servers = 5
       pm.max_spare_servers = 20
       pm.max_requests = 500
+
     '';
 
     # Run update scripts regularly
