@@ -34,25 +34,25 @@ with lib;
         host = mkOption {
 	  description = "URL for Postgres host";
 	  default = "localhost";
-	  type = types.text;
+	  type = types.string;
 	};
 
 	username = mkOption {
 	  description = "Postgres username";
 	  default = "sanbase";
-	  type = types.text;
+	  type = types.string;
 	};
 
 	password = mkOption {
 	  description = "Postgres password";
 	  default = "sanbase";
-	  type = types.text;
+	  type = types.string;
 	};
 
 	database = mkOption {
 	  description = "Postgres database";
 	  default = "postgres";
-	  type = types.text;
+	  type = types.string;
 	};
 	
       };

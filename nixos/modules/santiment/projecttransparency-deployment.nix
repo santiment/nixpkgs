@@ -12,7 +12,7 @@ in
     };
   };
 
-  config = mkIf config.services.santiment.projecttransparency.enable {
+  config = mkIf config.services.santiment.projecttransparency-deployment.enable {
 
     services.santiment.projecttransparency = {
       enable = true;
