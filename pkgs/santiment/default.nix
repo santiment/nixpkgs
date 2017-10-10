@@ -5,13 +5,20 @@ let
       callPackage = super.newScope self;
 
       sanitiseName = callPackage ./lib/sanitiseName.nix {};
-      fetchGitHashless = callPackage ./lib/fetchGitHashless.nix {};
-      latestGit = callPackage ./lib/latestGit.nix {};
+      fetchGitHashless = (callPackage ./lib/fetchGitHashless.nix {}).fetchGitHashless;
+      fetchGitPrivateHashless = (callPackage ./lib/fetchGitHashless.nix {}).fetchGitPrivateHashless;
+      latestGit = (callPackage ./lib/latestGit.nix {}).latestGit;
+      latestGitPrivate = (callPackage ./lib/latestGit.nix {}).latestGitPrivate;
 
-      sanbase = latestGit {
+      sanbase = callPackage (latestGit {
         url =  "https://github.com/santiment/sanbase.git";
 	ref = "refs/heads/${deploymentEnvironment}";
-      };
+      }) {};
+
+      projecttransparency = callPackage (latestGitPrivate {
+        url = "git@github.com:santiment/projecttransparency.org.git";
+	ref = "refs/heads/${deploymentEnvironment}";
+      }) {};
     };
 
   result = update result pkgs;

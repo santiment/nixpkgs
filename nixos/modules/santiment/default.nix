@@ -4,7 +4,11 @@ let
   cfg = config.santiment.ec2-init;
 in {
 
-  imports = [ ./sanbase.nix ];
+  imports = [
+    ./sanbase.nix
+    ./projecttransparency.nix
+    ./projecttransparency-deployment.nix
+  ];
   
   options = {
     santiment.ec2-init.enable = mkOption {
@@ -20,6 +24,7 @@ in {
     nix.nixPath = [
       "nixpkgs=https://github.com/santiment/nixpkgs/archive/${pkgs.deploymentEnvironment}.tar.gz"
       "nixos-config=/etc/nixos/configuration.nix"
+      "ssh-config-file=/etc/nixos/secrets/sshconfig"
     ];
     
   };
