@@ -20,7 +20,15 @@ in {
   };
 
   config = mkIf cfg.enable {
+
     ec2.hvm = true;
+
+    # Standard amazon-init has the wrong NIX_PATH. We replace it with
+    # our own script below
+    systemd.services.amazon-init.enable = false;
+
+    # Set Nix path. The /etc/nixos/secrets/ folder is contained in our
+    # generic AMI image
     nix.nixPath = [
       "nixpkgs=https://github.com/santiment/nixpkgs/archive/${pkgs.deploymentEnvironment}.tar.gz"
       "nixos-config=/etc/nixos/configuration.nix"
