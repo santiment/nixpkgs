@@ -82,6 +82,8 @@ in {
         NIX_PATH = concatStringsSep ":" config.nix.nixPath;
       };
 
+      path = [pkgs.gnutar pkgs.gzip pkgs.xz.bin];
+
       script = ''
 	#!${pkgs.stdenv.shell} -eu
 
